@@ -362,17 +362,18 @@ namespace Math
 		VECTOR3 min;
 	};
 
-
 	extern float Vec2_Dot(const VECTOR2& vec1, const VECTOR2& vec2);
 
 	extern float Vec2_Length(const VECTOR2& vec);
 
 	extern float Vec3_Dot(const VECTOR3& vec1, const VECTOR3& vec2);
 
+	//cross product
 	extern VECTOR3 Vec3_Cross(const VECTOR3& vec1, const VECTOR3& vec2);
 
 	extern float Vec3_Length(const VECTOR3& vec);
 
+	//For a given incident vector vec and surface normal axis reflect returns the reflection direction calculated as I - 2.0 * dot(N, I) * N.
 	extern VECTOR3 Vec3_Reflect(const VECTOR3& vec, const VECTOR3& axis);
 
 	extern float Vec4_Dot(const VECTOR4& vec1, const VECTOR4& vec2);
