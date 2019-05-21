@@ -16,7 +16,7 @@ namespace Math
 
 		float	Length()
 		{
-			return sqrt(x*x + y*y);
+			return sqrt(x*x + y * y);
 		};
 
 		VECTOR2&	Normalize()
@@ -37,7 +37,7 @@ namespace Math
 
 		BOOL	operator==(const VECTOR2& vec)
 		{
-			if (vec.x == x&&vec.y == y)
+			if (vec.x == x && vec.y == y)
 				return TRUE;
 			else
 				return FALSE;
@@ -102,7 +102,7 @@ namespace Math
 
 		float	Length() const
 		{
-			return sqrtf(x*x + y*y + z*z );
+			return sqrtf(x*x + y * y + z * z);
 		};
 
 		VECTOR3&	Normalize()
@@ -122,9 +122,9 @@ namespace Math
 		}
 
 
-		BOOL	operator==(const VECTOR3& vec) 
+		BOOL	operator==(const VECTOR3& vec)
 		{
-			if (vec.x == x&&vec.y == y&&vec.z == z)
+			if (vec.x == x && vec.y == y && vec.z == z)
 				return TRUE;
 			else
 				return FALSE;
@@ -172,16 +172,16 @@ namespace Math
 		}
 
 		//the scalar is put before the vector3
-		friend VECTOR3 operator*(float scaleFactor,const VECTOR3& vec)
+		friend VECTOR3 operator*(float scaleFactor, const VECTOR3& vec)
 		{
 			return VECTOR3(scaleFactor*vec.x, scaleFactor* vec.y, scaleFactor* vec.z);
 		}
 
 		VECTOR3& operator*=(const float scaleFactor)
 		{
-			x *=scaleFactor;
+			x *= scaleFactor;
 			y *= scaleFactor;
-			z *=scaleFactor;
+			z *= scaleFactor;
 			return *this;
 		}
 
@@ -194,7 +194,7 @@ namespace Math
 	{
 		VECTOR4() { };
 		VECTOR4(float X, float Y, float Z, float W) { x = X; y = Y; z = Z; w = W; };
-		VECTOR4(const float column[4]) 
+		VECTOR4(const float column[4])
 		{
 			x = column[0];
 			y = column[1];
@@ -204,7 +204,7 @@ namespace Math
 
 		float	Length()
 		{
-			return sqrt(x*x + y*y + z*z + w*w);
+			return sqrt(x*x + y * y + z * z + w * w);
 		};
 
 		VECTOR4&	Normalize()
@@ -226,7 +226,7 @@ namespace Math
 
 		BOOL	operator==(const VECTOR4& vec)
 		{
-			if (vec.x == x&&vec.y == y&&vec.z == z&&vec.w==w)
+			if (vec.x == x && vec.y == y && vec.z == z && vec.w == w)
 				return TRUE;
 			else
 				return FALSE;
@@ -267,7 +267,7 @@ namespace Math
 
 		friend VECTOR4 operator*(float scaleFactor, const VECTOR4& vec)
 		{
-			return VECTOR4(scaleFactor*vec.x, scaleFactor* vec.y, scaleFactor* vec.z,scaleFactor*vec.w);
+			return VECTOR4(scaleFactor*vec.x, scaleFactor* vec.y, scaleFactor* vec.z, scaleFactor*vec.w);
 		}
 
 		VECTOR4& operator*=(const float scaleFactor)
@@ -296,7 +296,7 @@ namespace Math
 		{
 			if (row < 4)
 			{
-				for (UINT i = 0;i < 4;i++)
+				for (UINT i = 0; i < 4; i++)
 					m[row][i] = newRow[i];
 			}
 		};
@@ -305,7 +305,7 @@ namespace Math
 		{
 			if (row < 4)
 			{
-				for (UINT i = 0;i < 4;i++)
+				for (UINT i = 0; i < 4; i++)
 					m[row][i] = newRow[i];
 			}
 		};
@@ -314,7 +314,7 @@ namespace Math
 		{
 			if (col < 4)
 			{
-				for (UINT i = 0;i < 4;++i)
+				for (UINT i = 0; i < 4; ++i)
 					m[i][col] = newCol[i];
 			}
 		};
@@ -323,14 +323,14 @@ namespace Math
 		{
 			if (col < 4)
 			{
-				for (UINT i = 0;i < 4;++i)
+				for (UINT i = 0; i < 4; ++i)
 					m[i][col] = newCol[i];
 			}
 		};
-		
-		inline void SetMatrix(VECTOR4 (&&row)[4])
+
+		inline void SetMatrix(VECTOR4(&&row)[4])
 		{
-			for (UINT i = 0;i < 4;++i)
+			for (UINT i = 0; i < 4; ++i)
 			{
 				m[i][0] = row[i].x;
 				m[i][1] = row[i].y;
@@ -362,29 +362,28 @@ namespace Math
 		VECTOR3 min;
 	};
 
+
 	extern float Vec2_Dot(const VECTOR2& vec1, const VECTOR2& vec2);
 
 	extern float Vec2_Length(const VECTOR2& vec);
 
 	extern float Vec3_Dot(const VECTOR3& vec1, const VECTOR3& vec2);
 
-	//cross product
 	extern VECTOR3 Vec3_Cross(const VECTOR3& vec1, const VECTOR3& vec2);
 
 	extern float Vec3_Length(const VECTOR3& vec);
 
-	//For a given incident vector vec and surface normal axis reflect returns the reflection direction calculated as I - 2.0 * dot(N, I) * N.
 	extern VECTOR3 Vec3_Reflect(const VECTOR3& vec, const VECTOR3& axis);
 
 	extern float Vec4_Dot(const VECTOR4& vec1, const VECTOR4& vec2);
 
 	extern float Vec4_Length(const VECTOR4& vec);
-	
-		/*
-	  Y|    / Z
-		|  /
-		|/________ X
-		*/
+
+	/*
+  Y|    / Z
+	|  /
+	|/________ X
+	*/
 
 
 	extern MATRIX4x4 Matrix_Multiply(const MATRIX4x4& leftMat, const MATRIX4x4& rightMat);
@@ -410,7 +409,7 @@ namespace Math
 
 	extern float Clamp(float val, float min, float max);
 
-	extern VECTOR2 Clamp(const VECTOR2& val,const VECTOR2& min, const VECTOR2& max);
+	extern VECTOR2 Clamp(const VECTOR2& val, const VECTOR2& min, const VECTOR2& max);
 
 	extern VECTOR3 Clamp(const VECTOR3& val, const VECTOR3& min, const VECTOR3& max);
 
@@ -422,6 +421,6 @@ namespace Math
 
 	extern VECTOR3 Lerp(const VECTOR3& start, const VECTOR3& end, float t);
 
-	extern BOOL Intersect_Ray_AABB(const VECTOR3& rayStart, const VECTOR3& rayEnd,const BOUNDINGBOX& box, VECTOR3& outIntersectPoint, BOOL testFrontSide);
+	extern BOOL Intersect_Ray_AABB(const VECTOR3& rayStart, const VECTOR3& rayEnd, const BOUNDINGBOX& box, VECTOR3& outIntersectPoint, BOOL testFrontSide);
 
 }

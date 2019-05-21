@@ -1,5 +1,7 @@
 #include "MyConsoleEngine.h"
+
 using namespace Math;
+
 float Math::Vec2_Dot(const VECTOR2& vec1, const VECTOR2& vec2)
 {
 	return vec1.x*vec2.x + vec1.y*vec2.y;
