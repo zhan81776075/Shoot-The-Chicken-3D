@@ -54,6 +54,7 @@ struct Material
 	UINT			specularSmoothLevel;
 };
 
+//顶点结构体
 struct Vertex
 {
 	VECTOR3 pos;
