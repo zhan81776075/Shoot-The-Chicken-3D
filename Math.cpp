@@ -10,11 +10,13 @@ float Math::Vec2_Length(const VECTOR2& vec)
 	return sqrtf(vec.x*vec.x + vec.y*vec.y);
 }
 
+//三元向量点积
 float Math::Vec3_Dot(const VECTOR3& vec1, const VECTOR3& vec2)
 {
 	return vec1.x*vec2.x + vec1.y*vec2.y + vec1.z*vec2.z;
 };
 
+//三元向量叉积，得到垂直于两个向量的向量
 VECTOR3 Math::Vec3_Cross(const VECTOR3& vec1, const VECTOR3& vec2)
 {
 	return VECTOR3(
